@@ -1,0 +1,678 @@
+body{
+margin:0;
+font-family:Segoe UI,Arial;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#020617;
+padding:15px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 4px 20px rgba(0,0,0,.6);
+position: sticky;
+top: 0;
+z-index: 999;
+} 
+
+.logoBox{
+display:flex;
+align-items:center;
+gap:15px;
+} 
+
+.logoBox img{
+height:50px;
+} 
+
+.marca{
+font-size:24px;
+font-weight:bold;
+}
+
+.back{
+position:fixed;
+top:80px;
+left:20px;
+background:#22c55e;
+padding:10px 18px;
+border-radius:30px;
+text-decoration:none;
+color:rgb(11, 7, 41);
+font-weight:bold;
+z-index: 998;
+transition: all 0.3s;
+}
+
+.back:hover{
+background:#1ea34c;
+transform: scale(1.05);
+}
+
+#iconoCarrito{
+position:fixed;
+top:20px;
+right:20px;
+background:#22c55e;
+padding:10px 16px;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+z-index: 1001;
+}
+
+#iconoCarrito:hover{
+background:#1ea34c;
+transform: scale(1.05);
+}
+
+#contador{
+background:red;
+padding:3px 8px;
+border-radius:50%;
+margin-left:5px;
+font-size: 14px;
+}
+
+.tienda{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+padding:40px;
+max-width:1400px;
+margin:auto;
+}
+
+.producto{
+background:#020617;
+border-radius:14px;
+padding:15px;
+box-shadow:0 6px 20px rgba(0,0,0,.5);
+text-align:center;
+transition: transform 0.3s;
+}
+
+.producto:hover{
+transform: translateY(-5px);
+}
+
+.producto img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.producto h3{
+font-size: 16px;
+margin: 10px 0;
+min-height: 40px;
+}
+
+.precio{
+color:#22c55e;
+font-weight:bold;
+font-size:20px;
+margin:10px 0;
+}
+
+.btn{
+background:#22c55e;
+border:none;
+padding:12px;
+width:100%;
+border-radius:8px;
+color:#020617;
+font-weight:bold;
+font-size: 16px;
+cursor:pointer;
+transition: all 0.3s;
+}
+
+.btn:hover{
+background:#1ea34c;
+transform: scale(1.02);
+}
+
+#carrito{
+position:fixed;
+right:-100%;
+top:0;
+width:100%;
+max-width:350px;
+height:100%;
+background:#020617;
+display:flex;
+flex-direction:column;
+transition:.4s;
+box-shadow:-4px 0 20px rgba(0,0,0,.6);
+z-index: 1002;
+} 
+
+#carrito.show{
+right:0;
+}
+
+.carrito-header{
+padding:20px;
+border-bottom:1px solid #334155;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.carrito-header h2{
+margin: 0;
+font-size: 20px;
+}
+
+.carrito-header button{
+background:#ef4444;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+font-weight: bold;
+transition: all 0.3s;
+}
+
+.carrito-header button:hover{
+background:#dc2626;
+}
+
+.carrito-contenido{
+flex:1;
+overflow:auto;
+padding:20px;
+}
+
+.carrito-footer{
+padding:20px;
+border-top:1px solid #334155;
+background:#020617;
+}
+
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #334155;
+padding:10px 0;
+gap: 10px;
+} 
+
+.item b{
+font-size: 14px;
+}
+
+.quitar{
+background:red;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+font-weight: bold;
+flex-shrink: 0;
+transition: all 0.3s;
+} 
+
+.quitar:hover{
+background:#dc2626;
+}
+
+.total{
+font-size:20px;
+color:#22c55e;
+margin:15px 0;
+font-weight: bold;
+} 
+
+.whatsapp{
+background:#25d366;
+padding:12px;
+border:none;
+width:100%;
+border-radius:8px;
+color:rgb(15, 9, 44);
+font-weight:bold;
+cursor:pointer;
+margin-bottom:10px;
+transition: all 0.3s;
+} 
+
+.whatsapp:hover{
+background:#20ba5a;
+}
+
+.vaciar{
+background:#ef4444;
+padding:10px;
+border:none;
+width:100%;
+border-radius:8px;
+color:white;
+cursor:pointer;
+font-weight: bold;
+transition: all 0.3s;
+}
+
+.vaciar:hover{
+background:#dc2626;
+}
+
+#modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index: 1003;
+padding: 20px;
+box-sizing: border-box;
+} 
+
+.modal-content{
+background:#020617;
+padding:25px;
+border-radius:12px;
+text-align:center;
+max-width: 400px;
+width: 100%;
+}
+
+.modal-content h3{
+margin-top: 0;
+font-size: 18px;
+}
+
+.modal-content input{
+width:80px;
+padding:8px;
+text-align:center;
+font-size: 16px;
+border: 2px solid #334155;
+border-radius: 6px;
+background: #0f172a;
+color: white;
+}
+
+footer{
+background:#020617;
+color:#94a3b8;
+padding:25px;
+text-align:center;
+margin-top:40px;
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+
+/* Tablets y pantallas medianas (768px - 1100px) */
+@media(max-width:1100px){
+.tienda{
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:30px 20px;
+}
+
+.producto h3{
+font-size: 15px;
+}
+}
+
+/* Tablets pequeñas (600px - 768px) */
+@media(max-width:768px){
+header{
+padding:12px 20px;
+}
+
+.logoBox img{
+height:40px;
+}
+
+.marca{
+font-size:18px;
+}
+
+.back{
+top:70px;
+left:15px;
+padding:8px 14px;
+font-size: 14px;
+}
+
+#iconoCarrito{
+top:15px;
+right:15px;
+padding:8px 14px;
+font-size: 14px;
+}
+
+.tienda{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+padding:25px 15px;
+}
+
+.producto{
+padding:12px;
+}
+
+.producto img{
+height:150px;
+}
+
+.producto h3{
+font-size: 14px;
+min-height: 38px;
+}
+
+.precio{
+font-size:18px;
+}
+
+.btn{
+padding:10px;
+font-size: 15px;
+}
+
+#carrito{
+max-width:320px;
+}
+
+.carrito-header{
+padding:15px;
+}
+
+.carrito-header h2{
+font-size: 18px;
+}
+
+.carrito-contenido{
+padding:15px;
+}
+
+.carrito-footer{
+padding:15px;
+}
+
+.total{
+font-size:18px;
+}
+
+footer{
+padding:20px;
+font-size: 13px;
+}
+}
+
+/* Móviles (480px - 600px) */
+@media(max-width:600px){
+header{
+padding:10px 15px;
+}
+
+.logoBox{
+gap:10px;
+}
+
+.logoBox img{
+height:35px;
+}
+
+.marca{
+font-size:15px;
+line-height: 1.2;
+}
+
+.back{
+top:65px;
+left:10px;
+padding:7px 12px;
+font-size: 13px;
+}
+
+#iconoCarrito{
+top:12px;
+right:12px;
+padding:7px 12px;
+font-size: 13px;
+}
+
+#contador{
+padding:2px 6px;
+font-size: 12px;
+}
+
+.tienda{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:20px 12px;
+margin-top: 50px;
+}
+
+.producto{
+padding:10px;
+}
+
+.producto img{
+height:130px;
+}
+
+.producto h3{
+font-size: 13px;
+min-height: 36px;
+}
+
+.precio{
+font-size:16px;
+margin:8px 0;
+}
+
+.btn{
+padding:9px;
+font-size: 14px;
+}
+
+#carrito{
+max-width:100%;
+width:100%;
+}
+
+.carrito-header{
+padding:12px;
+}
+
+.carrito-header h2{
+font-size: 16px;
+}
+
+.carrito-header button{
+padding:6px 10px;
+font-size: 13px;
+}
+
+.carrito-contenido{
+padding:12px;
+}
+
+.item{
+font-size: 13px;
+}
+
+.item b{
+font-size: 13px;
+}
+
+.quitar{
+padding:5px 10px;
+font-size: 12px;
+}
+
+.carrito-footer{
+padding:12px;
+}
+
+.total{
+font-size:16px;
+margin:12px 0;
+}
+
+.whatsapp{
+padding:10px;
+font-size: 14px;
+}
+
+.vaciar{
+padding:9px;
+font-size: 13px;
+}
+
+.modal-content{
+padding:20px;
+margin: 0 15px;
+}
+
+.modal-content h3{
+font-size: 16px;
+}
+
+.modal-content input{
+width:70px;
+padding:7px;
+font-size: 15px;
+}
+
+footer{
+padding:15px;
+font-size: 12px;
+margin-top:30px;
+}
+}
+
+/* Móviles pequeños (360px - 480px) */
+@media(max-width:480px){
+header{
+padding:8px 12px;
+}
+
+.logoBox img{
+height:30px;
+}
+
+.marca{
+font-size:13px;
+}
+
+.back{
+top:60px;
+left:8px;
+padding:6px 10px;
+font-size: 12px;
+}
+
+#iconoCarrito{
+top:10px;
+right:10px;
+padding:6px 10px;
+font-size: 12px;
+}
+
+.tienda{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+padding:18px 10px;
+margin-top: 45px;
+}
+
+.producto{
+padding:8px;
+}
+
+.producto img{
+height:110px;
+}
+
+.producto h3{
+font-size: 12px;
+min-height: 34px;
+margin: 8px 0;
+}
+
+.precio{
+font-size:15px;
+margin:6px 0;
+}
+
+.btn{
+padding:8px;
+font-size: 13px;
+}
+
+.modal-content{
+padding:18px;
+margin: 0 12px;
+}
+
+.modal-content h3{
+font-size: 15px;
+}
+
+.modal-content p{
+font-size: 14px;
+}
+
+.modal-content input{
+width:65px;
+padding:6px;
+font-size: 14px;
+}
+
+.modal-content .btn{
+padding:10px 20px;
+font-size: 14px;
+}
+}
+
+/* Móviles muy pequeños (menos de 360px) */
+@media(max-width:360px){
+.marca{
+font-size:12px;
+}
+
+.tienda{
+grid-template-columns:1fr;
+gap:15px;
+padding:15px 8px;
+}
+
+.producto{
+max-width: 280px;
+margin: 0 auto;
+}
+
+.producto img{
+height:140px;
+}
+
+.producto h3{
+font-size: 13px;
+min-height: 38px;
+}
+
+.precio{
+font-size:16px;
+}
+
+.btn{
+font-size: 14px;
+}
+}

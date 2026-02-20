@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motos y Más Accesorios - Tu tienda de confianza</title>
+<link rel="icon" type="image/png" href="icono.png">
+<link rel="stylesheet" href="estiloindex.css">
+<style>
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.hero {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.cat {
+  animation: fadeInUp 1s ease-out;
+}
+
+.cat:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.cat:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+/* Botón WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1);
+}
+
+/* Hero section mejorado */
+.hero {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 60px 20px 40px;
+  margin-bottom: 20px;
+  border-radius: 0 0 30px 30px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 0 0 15px 0;
+  background: linear-gradient(135deg, #22c55e, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.badge {
+  background: rgba(34, 197, 94, 0.1);
+  border: 2px solid #22c55e;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #22c55e;
+}
+
+/* Sección de beneficios */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.beneficio {
+  background: #020617;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,.4);
+  transition: all 0.3s;
+}
+
+.beneficio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+}
+
+.beneficio-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.beneficio h3 {
+  color: #22c55e;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.beneficio p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Contador de productos */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 20px;
+  background: #020617;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.5);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #22c55e;
+  display: block;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+@media(max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+  }
+  
+  .hero-badges {
+    gap: 10px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+  
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .whatsapp-float img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .stats {
+    gap: 25px;
+    padding: 20px 15px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 480px) {
+  .hero {
+    padding: 40px 15px 30px;
+  }
+  
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  .hero p {
+    font-size: 14px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .beneficios {
+    grid-template-columns: 1fr;
+    padding: 30px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;justify-content:center;gap:15px;">
+<img class="icono" src="logo.png" alt="Logo Motos y Más">
+<div>
+<div class="logo">Motos y Más Accesorios</div>
+<p class="sublogo"></p>
+</div>
+</div>
+</header>
+
+
+
+<!-- CARRUSEL INFINITO -->
+<section class="carousel-wrap">
+<div class="carousel">
+<img src="img/0090_Mochila_Aerodinamica_Negro_Rojo.webp" alt="Mochila Aerodinámica">
+<img src="img/0080_Muslera_Buba_Wizard.webp" alt="Muslera Buba">
+<img src="img/0002_Casaca_Scoyco_Black_M_L_XL.webp" alt="Casaca Scoyco">
+<img src="img/0099_AGV_K1_Power_GunMetal_White_Green.webp" alt="Casco AGV K1">
+<img src="img/moto/0001_Malla_de_asiento.webp" alt="Malla de asiento">
+<img src="img/moto/0020_Base_Portacelular_Grueso_y_delgado.webp" alt="Base Portacelular">
+<img src="img/moto/0181_Maleta_Negro_Modelo_55L_ABS_Base_metal.webp" alt="Maleta 55L">
+<img src="img/0001_Casaca_sven_dama_xs.webp" alt="Casaca Sven Dama">
+<img src="img/0020_Rodillera_Deportivo_D13_Negro.webp" alt="Rodillera Deportiva">
+<img src="img/0033_Bota_Scoyco_Impermeable_Punta_Metal.webp" alt="Bota Scoyco">
+<!-- duplicadas para efecto infinito -->
+<img src="img/0090_Mochila_Aerodinamica_Negro_Rojo.webp" alt="Mochila Aerodinámica">
+<img src="img/0080_Muslera_Buba_Wizard.webp" alt="Muslera Buba">
+<img src="img/0002_Casaca_Scoyco_Black_M_L_XL.webp" alt="Casaca Scoyco">
+<img src="img/0099_AGV_K1_Power_GunMetal_White_Green.webp" alt="Casco AGV K1">
+<img src="img/moto/0001_Malla_de_asiento.webp" alt="Malla de asiento">
+<img src="img/moto/0020_Base_Portacelular_Grueso_y_delgado.webp" alt="Base Portacelular">
+<img src="img/moto/0181_Maleta_Negro_Modelo_55L_ABS_Base_metal.webp" alt="Maleta 55L">
+<img src="img/0001_Casaca_sven_dama_xs.webp" alt="Casaca Sven Dama">
+<img src="img/0020_Rodillera_Deportivo_D13_Negro.webp" alt="Rodillera Deportiva">
+<img src="img/0033_Bota_Scoyco_Impermeable_Punta_Metal.webp" alt="Bota Scoyco">
+</div>
+</section>
+
+<!-- CATEGORÍAS -->
+<div style="text-align:center; margin: 50px 0 30px;">
+<h2 style="font-size: 36px; margin-bottom: 10px;">Explora Nuestras Categorías</h2>
+<p style="color: #94a3b8; font-size: 16px;">Encuentra todo lo que necesitas en un solo lugar</p>
+</div>
+
+<div class="categorias">
+<a href="parati.html">
+<div class="cat">
+<h2>🧥 Para Ti</h2>
+<p>Equipamiento del piloto</p>
+<img src="parati2.webp" alt="Equipamiento para motociclistas">
+<div style="margin-top: 15px; color: #22c55e; font-weight: bold;">Ver productos →</div>
+</div>
+</a>
+
+<a href="tumoto.html">
+<div class="cat">
+<h2>🏍️ Para Tu Moto</h2>
+<p>Accesorios y repuestos</p>
+<img src="tumoto.webp" alt="Accesorios para motos">
+<div style="margin-top: 15px; color: #22c55e; font-weight: bold;">Ver productos →</div>
+</div>
+</a>
+</div>
+<!-- BENEFICIOS -->
+<section class="beneficios">
+<div class="beneficio">
+<div class="beneficio-icon">🚚</div>
+<h3>Envío Nacional</h3>
+<p>Llegamos a todas las ciudades del Perú de forma rápida y segura</p>
+</div>
+
+<div class="beneficio">
+<div class="beneficio-icon">🛡️</div>
+<h3>Productos Garantizados</h3>
+<p>Todos nuestros productos cuentan con garantía oficial</p>
+</div>
+
+<div class="beneficio">
+<div class="beneficio-icon">💬</div>
+<h3>Asesoría Personalizada</h3>
+<p>Te ayudamos a elegir el mejor equipo para ti y tu moto</p>
+</div>
+
+<div class="beneficio">
+<div class="beneficio-icon">💳</div>
+<h3>Pago Seguro</h3>
+<p>Múltiples métodos de pago disponibles para tu comodidad</p>
+</div>
+</section>
+
+<p>
+<!-- ESTADÍSTICAS -->
+<div class="stats">
+<div class="stat">
+<span class="stat-number">300+</span>
+<span class="stat-label">Productos</span>
+</div>
+<div class="stat">
+<span class="stat-number">1000+</span>
+<span class="stat-label">Clientes Felices</span>
+</div>
+<div class="stat">
+<span class="stat-number">24/7</span>
+<span class="stat-label">Atención</span>
+</div>
+</div>
+
+<!-- Botón WhatsApp flotante -->
+<a href="https://wa.me/51989660431?text=Hola,%20quiero%20información%20sobre%20los%20productos" 
+   target="_blank" 
+   class="whatsapp-float"
+   title="Chatea con nosotros">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px; color: white;">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+</svg>
+</a>
+
+<footer>
+<div style="margin-bottom: 15px;">
+<strong style="color: #22c55e; font-size: 18px;">Motos y Más Accesorios</strong>
+</div>
+<div style="margin-bottom: 10px;">
+📍 Lima - Perú | 📞 WhatsApp: 989 660 431
+</div>
+<div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #334155;">
+© 2026 Cesar Dev - Todos los derechos reservados
+</div>
+</footer>
+
+</body>
+</html>

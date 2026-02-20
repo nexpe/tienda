@@ -1,0 +1,300 @@
+body{
+margin:0;
+font-family:Segoe UI,Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+margin-top: 20px;
+}
+
+/* HEADER */
+header{
+position: sticky;
+top: 0;
+z-index: 1000;
+background: #020617;    
+padding:20px;
+}
+
+.logo{
+font-size:40px;
+font-weight:bold;
+}
+
+.sublogo{
+font-size: 14px;
+margin-top: 5px;
+}
+
+.icono{
+height:100px;
+}
+
+/* CATEGORIAS */
+.categorias{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:60px;
+padding: 0 20px;
+}
+
+.cat{
+background:#020617;
+padding:30px;
+border-radius:12px;
+width:260px;
+cursor:pointer;
+box-shadow:0 4px 20px rgba(0,0,0,.6);
+transition:.3s;
+}
+
+.cat:hover{
+transform:scale(1.05);
+}
+
+.cat img{
+width:150px;
+margin-bottom:10px;
+}
+
+.cat h2{
+margin: 10px 0;
+font-size: 24px;
+}
+
+.cat p{
+margin: 5px 0;
+font-size: 14px;
+color: #94a3b8;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+/* ===== CARRUSEL ===== */
+.carousel-wrap{
+overflow:hidden;
+margin:70px auto;
+max-width:1200px;
+}
+
+.carousel{
+display:flex;
+gap:18px;
+width:max-content;
+animation:scroll 35s linear infinite;
+}
+
+.carousel img{
+height:160px;
+width:220px;
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,.6);
+transition:.3s;
+}
+
+.carousel img:hover{
+transform:scale(1.08);
+}
+
+.carousel:hover{
+animation-play-state:paused;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* FOOTER */
+footer{
+margin-top:80px;
+padding:20px;
+color:#94a3b8;
+background:#020617;
+font-size: 14px;
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+
+/* Tablets y pantallas medianas */
+@media(max-width:900px){
+.categorias{
+gap:30px;
+margin-top:40px;
+}
+
+.cat{
+width:220px;
+padding:25px;
+}
+
+.cat img{
+width:120px;
+}
+}
+
+/* Móviles medianos */
+@media(max-width:700px){
+header{
+padding:15px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.sublogo{
+font-size: 11px;
+}
+
+.icono{
+height:70px;
+}
+
+.carousel-wrap{
+margin:40px auto;
+}
+
+.carousel img{
+height:120px;
+width:160px;
+}
+
+.categorias{
+gap:20px;
+margin-top:30px;
+padding: 0 15px;
+}
+
+.cat{
+width:100%;
+max-width:300px;
+padding:20px;
+}
+
+.cat h2{
+font-size: 20px;
+}
+
+.cat p{
+font-size: 13px;
+}
+
+.cat img{
+width:100px;
+}
+
+footer{
+margin-top:50px;
+padding:15px;
+font-size: 12px;
+}
+}
+
+/* Móviles pequeños */
+@media(max-width:480px){
+body{
+margin-top: 15px;
+}
+
+header{
+padding:12px;
+}
+
+.logo{
+font-size:18px;
+line-height: 1.2;
+}
+
+.sublogo{
+font-size: 9px;
+margin-top: 3px;
+}
+
+.icono{
+height:50px;
+}
+
+.carousel-wrap{
+margin:30px auto;
+}
+
+.carousel{
+gap:12px;
+}
+
+.carousel img{
+height:100px;
+width:140px;
+}
+
+.categorias{
+gap:15px;
+margin-top:25px;
+padding: 0 10px;
+}
+
+.cat{
+width:100%;
+max-width:280px;
+padding:18px;
+}
+
+.cat h2{
+font-size: 18px;
+margin: 8px 0;
+}
+
+.cat p{
+font-size: 12px;
+}
+
+.cat img{
+width:90px;
+}
+
+footer{
+margin-top:40px;
+padding:12px;
+font-size: 11px;
+line-height: 1.5;
+}
+}
+
+/* Móviles muy pequeños */
+@media(max-width:360px){
+.logo{
+font-size:16px;
+}
+
+.sublogo{
+font-size: 8px;
+}
+
+.icono{
+height:45px;
+}
+
+.carousel img{
+height:90px;
+width:120px;
+}
+
+.cat{
+padding:15px;
+}
+
+.cat h2{
+font-size: 16px;
+}
+
+.cat img{
+width:80px;
+}
+}
